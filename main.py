@@ -1,6 +1,6 @@
 import requests
 
-url = "PasteURLHere"
+url = "https://BaseURLHere"
 filetype = ".mp3"
 downloadRange = range(1, 114)
 
@@ -12,5 +12,5 @@ writingMode = "wb"
 for i in downloadRange:
     urlfullPath = url + str(i).zfill(3) + filetype
     response = requests.get(urlfullPath)
-    with open("/download" + str(i).zfill(3) + filetype, writingMode) as f:
+    with open("./download/" + str(i).zfill(3) + filetype, writingMode) as f:
         f.write(response.content)
